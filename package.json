@@ -5,15 +5,17 @@
   "main": "index.js",
   "scripts": {
     "build": "next build",
-    "dev": "next",
+    "dev": "nodemon ./server/app.js",
     "fix": "standard --fix",
-    "test": "standard",
-    "start": "next start"
+    "start": "NODE_ENV=production node ./server/app.js",
+    "test": "standard"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
     "next": "^8.0.4",
+    "nodemon": "^1.18.10",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "semantic-ui-react": "^0.86.0",

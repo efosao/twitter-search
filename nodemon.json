@@ -1,0 +1,12 @@
+{
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ignore": [
+    ".next"
+  ],
+  "watch": [
+    "nodemon.json",
+    "server/**/*.js"
+  ]
+}
