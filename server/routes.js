@@ -1,9 +1,28 @@
 const express = require('express')
-const _ = require('lodash')
+const Twitter = require('twitter')
+
 const router = express.Router()
 
-router.get('/search', async (req, res) => {
-  return res.json({ hello: true })
+const client = new Twitter({
+  consumer_key: process.env.CONSUMER_KEY,
+  consumer_secret: process.env.CONSUMER_SECRET,
+  access_token_key: process.env.ACCESS_TOKEN_KEY,
+  access_token_secret: process.env.ACCESS_TOKEN_SECRET
+})
+
+router.get('/search/:screen_name', async (req, res) => {
+  const { screen_name: username } = req.params
+  const params = req.params
+  client.get('statuses/user_timeline', params, (error, tweets, response) => {
+    if (!error) {
+      return res.json({
+        username,
+        tweets
+      })
+    } else {
+      return res.json({ error })
+    }
+  })
 })
 
 module.exports = router
