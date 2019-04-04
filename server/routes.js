@@ -12,12 +12,12 @@ const client = new Twitter({
 
 router.get('/search/:screen_name', async (req, res) => {
   const { screen_name: username } = req.params
-  const params = req.params
+  const params = { ...req.params, count: 10 }
   client.get('statuses/user_timeline', params, (error, tweets, response) => {
     if (!error) {
       return res.json({
-        username,
-        tweets
+        tweets,
+        username
       })
     } else {
       return res.json({ error })
