@@ -7,7 +7,7 @@ Basic Twitter search app ...
 
 ### How to run
 
-1. `create a `.env` in app directory with the following secret ...
+1. create a `.env` in app directory with the following secrets ...
 
 ```sh
   CONSUMER_KEY='###########'
@@ -15,7 +15,10 @@ Basic Twitter search app ...
   ACCESS_TOKEN_KEY='###########'
   ACCESS_TOKEN_SECRET='###########'
 ```
-2. type `npm run dev` to start application in terminal.
+
+2. type `npm run dev` to start the application in terminal.
+
+3. Bob's your Uncle, enjoy!
 
 ### Packages used
 
