@@ -1,5 +1,5 @@
-import React from 'react'
 import Head from 'next/head'
+import React from 'react'
 import { Container, Grid, Header, Icon } from 'semantic-ui-react'
 
 const Layout = ({ children }) => {
